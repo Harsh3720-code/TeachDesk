@@ -1,0 +1,12 @@
+[project]
+name = "teachdesk"
+version = "0.1.0"
+description = "AI admin assistant for UK secondary school teachers: parent letters, report comments and resource adaptation."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pypandoc-binary>=1.15",
+]
