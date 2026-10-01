@@ -26,6 +26,12 @@ why, and the key point worth being able to explain.
   the Windows installer does not add it to `PATH`.
 - Developer guide: configuration table, new commands, and a *Windows setup*
   section.
+- Added continuous integration (`.github/workflows/ci.yml`). Every pull request
+  into `main`, and every push to `main`, runs `uv sync --locked`, `make lint`,
+  `make test` and a Word-only handbook build on Ubuntu. Superseded pull-request
+  runs are cancelled; runs on `main` are not.
+- Added "Pin GitHub Actions to commit SHAs (with Dependabot)" to the open
+  questions.
 
 **Why**
 

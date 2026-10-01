@@ -39,3 +39,4 @@ Decisions identified but not yet taken. Each will become an ADR once decided.
 | Authentication and rate limiting for the live demo | `SPEC.md` has no login; a public link without limits exposes the API budget to abuse. | Week 5 (design earlier) |
 | Model price table for cost logging | Hard rule 6 requires cost per call; prices must live in configuration and be kept current. | Week 1 (F1 audit logging) |
 | Publishing built documents from CI | Whether CI attaches the built handbook to each run. | When CI is introduced |
+| Pin GitHub Actions to commit SHAs (with Dependabot) | Version tags such as `@v5` can be moved to different code; pinning to a commit SHA prevents a changed or compromised action from running in CI, and Dependabot keeps the pins up to date. | Before the demo deployment (Week 5) |
