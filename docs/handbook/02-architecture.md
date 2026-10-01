@@ -1,8 +1,25 @@
 # Architecture
 
-**Status: Planned.** This chapter describes the target architecture from
+**Status: Planned**, except where *Built so far* says otherwise. This chapter
+describes the target architecture from
 `SPEC.md` §4. Component, module and table names are provisional until approved
 (ADR-0004); each will be fixed as the milestone that builds it lands.
+
+## Built so far
+
+**Status: In progress** (`feature/app-skeleton`).
+
+| Module | Contents |
+|---|---|
+| `app/main.py` | `create_app()`, an application factory that builds the FastAPI app. There is no module-level app object: the server runs `uvicorn --factory app.main:create_app`, and tests build a fresh app with their own settings. |
+| `app/config.py` | `Settings`, typed configuration read from `TEACHDESK_*` environment variables (pydantic-settings). Holds the environment, log level and both model names. |
+
+| Route | Purpose |
+|---|---|
+| `GET /health` | Liveness check. Returns `{"status": "ok"}` when the process is serving requests. It does not yet check the database; that arrives with the data layer. |
+
+The model names in the *Model usage* table below are the `Settings` defaults
+and appear nowhere else in the code.
 
 ## System context
 

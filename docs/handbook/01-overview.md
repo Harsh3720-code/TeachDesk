@@ -104,7 +104,7 @@ breaks any of them is rejected regardless of other merits.
 
 | Week | Milestone | Status |
 |---|---|---|
-| 1 | Foundations + F1: repository, Docker, Postgres/pgvector, synthetic documents, ingestion, retrieval, parent letters end to end | **In progress:** project information and documentation pipeline |
+| 1 | Foundations + F1: repository, Docker, Postgres/pgvector, synthetic documents, ingestion, retrieval, parent letters end to end | **In progress:** project information and documentation pipeline done; application skeleton (app factory, settings, health endpoint, lint and test tooling) in review |
 | 2 | F2 + F3: report comments with PII redaction; resource adapter with reading-age checks | Planned |
 | 3 | Agent + guardrails: router, clarify/refuse, approval queue, audit log | Planned |
 | 4 | Evals + observability: golden set, eval runner in CI, cost/latency/guardrail dashboard | Planned |
