@@ -30,6 +30,7 @@ select = ["E", "F", "W", "I", "B", "UP"]
 strict = true
 plugins = ["pydantic.mypy"]
 files = ["app", "tests", "scripts"]
+explicit_package_bases = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
