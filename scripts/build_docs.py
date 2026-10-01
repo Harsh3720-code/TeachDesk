@@ -231,14 +231,17 @@ try:
         "com.sun.star.bridge.UnoUrlResolver", uno.getComponentContext())
     for _ in range(120):
         try:
-            ctx = resolver.resolve(f"uno:pipe,name={pipe};urp;StarOffice.ComponentContext")
+            ctx = resolver.resolve(
+                f"uno:pipe,name={pipe};urp;StarOffice.ComponentContext")
             break
         except Exception:
             time.sleep(0.5)
     else:
         sys.exit("could not connect to LibreOffice")
-    desktop = ctx.ServiceManager.createInstanceWithContext("com.sun.star.frame.Desktop", ctx)
-    doc = desktop.loadComponentFromURL(Path(src).resolve().as_uri(), "_blank", 0, props(Hidden=True))
+    desktop = ctx.ServiceManager.createInstanceWithContext(
+        "com.sun.star.frame.Desktop", ctx)
+    doc = desktop.loadComponentFromURL(
+        Path(src).resolve().as_uri(), "_blank", 0, props(Hidden=True))
     if doc is None:
         sys.exit(f"LibreOffice could not load {src}")
     indexes = doc.getDocumentIndexes()
