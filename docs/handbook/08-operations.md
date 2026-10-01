@@ -12,10 +12,15 @@
 
 ## Configuration and secrets
 
-- All configuration comes from environment variables, including model names
-  and the Anthropic API key.
-- A committed example file will list every variable with a safe placeholder;
-  real values are never committed.
+- All configuration comes from environment variables with the prefix
+  `TEACHDESK_`, read and validated by `Settings` in `app/config.py`
+  (**In progress**). The model names are already configured this way; the
+  Anthropic API key will be added the same way with the first model call.
+- `.env.example` is committed and lists every variable with a safe value. Real
+  values go in `.env`, which is git-ignored and never committed. The variables
+  are listed in the *Developer guide*.
+- The app checks every value when it starts and refuses to start if one is
+  invalid.
 - In CI and the demo environment, secrets come from the platform's secret
   store (GitHub Actions secrets; the cloud provider's secret manager).
 
